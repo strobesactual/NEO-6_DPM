@@ -92,15 +92,15 @@ def poll_gps(): # 1
         
 
 
-def set_gps(): # 2
+def set_gps(): # 2  (page 119)
     global dpm
     ubx_cfg_nav5_length_set = [0x24, 0x00]      # 36 bytes in get/set payload
     ubx_cfg_nav5_payload_set = [                # Payload configuration
         0xFF, 0xFF,                 # Mask (all on = apply all settings that follow)
-        0x07,                       # Dynamic platform model: "Airborne <2g" = 7 [0x07]
+        0x07,                       # ~~~~~~~~~~ Dynamic platform model: "Airborne <2g" = 7 [0x07] ~~~~~ (page 119)
         0x03,                       # Position Fixing Mode: 3 (Auto 2D/3D)
         0x00, 0x00, 0x00, 0x00,     # Fixed altitude for 2D Mode
-        0x10, 0x27, 0x00, 0x00,     # Fixed altitude variance for 2D Mode
+        0x10, 0x27, 0x00, 0x00,     # Fixed altitude variance for 2D Mode (This could probably be all zero?)
         0x05,                       # Min elevation for a satellite to be used
         0x00,                       # Max time to perform an extrapolation if GPS signal lost
         0xFA, 0x00,                 # Position DOP Mask to use
