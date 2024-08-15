@@ -19,11 +19,11 @@ num_iterations = 100     # Change this to the desired number of testing iteratio
 ck_a, ck_b = 0, 0
 # Define the header, ID, and length
 ubx_header = [0xB5, 0x62]       # Ublox sync characters
-ubx_ack_ack = [0x05, 0x01]      # Message Acknowledged
-ubx_ack_nak = [0x05, 0x00]      # Message Not-Acknowledged
-ubx_cfg_cfg_id = [0x06, 0x09]   # CFG-CFG ID
-ubx_cfg_nav5_id = [0x06, 0x24]  # CFG-NAV5 ID
-ubx_cfg_rst_id = [0x06, 0x04]   # CFG-RST ID
+ubx_ack_ack = [0x05, 0x01]      # Message Acknowledged      (page 91)
+ubx_ack_nak = [0x05, 0x00]      # Message Not-Acknowledged  (page 91)
+ubx_cfg_cfg_id = [0x06, 0x09]   # CFG-CFG ID    (page 106)
+ubx_cfg_nav5_id = [0x06, 0x24]  # CFG-NAV5 ID   (page 118)
+ubx_cfg_rst_id = [0x06, 0x04]   # CFG-RST ID    (page 140)
 
 
 print('\n',f"{CYAN}{'Configuring NEO-6M GPS module...'}{RESET}",'\n')
